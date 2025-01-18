@@ -14,11 +14,13 @@ class Grader {
 		}
 		for (int j = 0; j < n; j++) {
 			if (original[j] >= 40) {
-				if (original[j] % 5 <= 3) {
+				if (original[j] % 5 == 0) { // if it is already a multiple of 5
+					rounded[j] = original[j];
+				} else  if (5 - (original[j] % 5) >= 3) {
 					rounded[j] = original[j];
 				} else {
 					rounded[j] = original[j];
-					rounded[j] += (5 - (original[j] % 5));
+					rounded[j] += 5 - (original[j] % 5);
 				}
 			} else {
 				rounded[j] = original[j];
